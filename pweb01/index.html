@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Atividade Formulário </title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <header>
+    <h1>Escola Virtual</h1>
+    <h2>Formulário de Pré-Matrícula</h2>
+  </header>
+  <hr>
+  <main>
+    <bold>Dados Pessoais:</bold>
+    <div class="data_form">
+      <form action="../FormServlet" method="post">
+        <lable for='nome'>
+          <p>Nome do Aluno:<input type="text" id="nome-aluno" name='nome-aluno' required></p>
+        </lable>
+        <lable for='nascimento'>
+          <p>Nascimento (dd/mm/aaaa): <input
+              pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))"
+              name="nascimento" type="date" id="data-nascimento" required></p>
+        </lable>
+        <lable for='nome_mae'>
+          <p>Nome da Mãe:<input type="text" name='nome_mae' id="nome-mae" required></p>
+        </lable>
+        <lable for='nome_pai'>
+          <p>Nome do Pai:<input type="text" name='nome_pai' id='nome_pai' required></p>
+        </lable>
+        <lable for='telefone'>
+          <p>Telefone: DDD:(<input value="ddd" type="number" class='ddd' id='ddd' name="ddd" pattern="[0-9]{2}"
+              required>) Tel: <input type="tel" name="telefone" id='telefone' pattern="[0-9]{5}-[0-9]{4}" required>
+            Ramal:<input value="ramal" type="number" class="ramal" id='ramal' name="ramal" pattern="[0-9]{3}" required>
+          </p>
+        </lable>
+        <lable for='email'>
+          <p>E-mail:<input type="email" id="email" name="email" required></p>
+        </lable>
+    </div>
+    <hr>
+    <bold>Informações de Matrícula:</bold>
+    <div class="matricula">
+      <lable for="série">
+        <p>Série:</p>
+        <p>
+          <select name="série" id="série" required>
+            <option value="Pre-escolar">pré-escolar</option>
+            <option value="Fundamental">Fundamental</option>
+            <option value="Ensino Medio">Ensino Médio</option>
+          </select>
+        </p>
+      </lable>
+      <lable for='turno' class="turno">
+        <p>Turno:</p>
+        <p>
+          <input type="radio" id="turno" id="" name="turno" value="manha">
+          Manhã
+        </p>
+        <p>
+          <input type="radio" id="turno" name="turno" value="tarde">
+          Tarde
+        </p>
+      </lable>
+
+      <label for="atividades extracurriculares">
+        <p>Atividades Extracurriculares:</p>
+        <p><input type="checkbox" id="informatica" name="informatica" value="informatica">
+          Informática
+        </p>
+        <p><input type="checkbox" id="musica" name="musica" value="musica">
+          Música
+        </p>
+        <p><input type="checkbox" id="balet" name="balet" value="balet">
+          Balet
+        </p>
+        <p><input type="checkbox" id="pintura" name="pintura" value="pintura">
+          Pintura
+        </p>
+        <p><input type="checkbox" id="judo" name="judo" value="judo">
+          Judô
+        </p>
+        <p><input type="checkbox" id="futebol" name="futebol" value="futebol">
+          Futebol
+        </p>
+      </label>
+    </div>
+    </form>
+  </main>
+  <hr>
+  <footer>
+    <button type="submit" value="enviar">Enviar Formulário</button>
+    <button type="reset" value="limpar ">Limpar Campos</button>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+header,
+footer,
+.data_form{
+  text-align: center;
+}
+
+.ddd,
+.ramal{
+  width: 40px;
+  padding: 5px 5px 8px 8px;
+}
+
+.matricula{
+  display: flex;  
+}
+
+.turno{
+  margin-left: 4cm;
+  margin-right: 4cm;
+}
