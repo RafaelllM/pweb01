@@ -17,29 +17,29 @@
   <main>
     <bold>Dados Pessoais:</bold>
     <div class="data_form">
-      <form action="../FormServlet" method="post">
+      <form id="form" method="post">
         <lable for='nome'>
-          <p>Nome do Aluno:<input type="text" id="nome-aluno" name='nome-aluno' required></p>
+          <p>Nome do Aluno:<input type="text" id="nome-aluno" name='nome-aluno'></p>
         </lable>
         <lable for='nascimento'>
           <p>Nascimento (dd/mm/aaaa): <input
               pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))"
-              name="nascimento" type="date" id="data-nascimento" required></p>
+              name="nascimento" type="date" id="data-nascimento"></p>
         </lable>
         <lable for='nome_mae'>
-          <p>Nome da Mãe:<input type="text" name='nome_mae' id="nome-mae" required></p>
+          <p>Nome da Mãe:<input type="text" name='nome_mae' id="nome-mae"></p>
         </lable>
         <lable for='nome_pai'>
-          <p>Nome do Pai:<input type="text" name='nome_pai' id='nome_pai' required></p>
+          <p>Nome do Pai:<input type="text" name='nome_pai' id='nome_pai'></p>
         </lable>
         <lable for='telefone'>
           <p>Telefone: DDD:(<input value="ddd" type="number" class='ddd' id='ddd' name="ddd" pattern="[0-9]{2}"
-              required>) Tel: <input type="tel" name="telefone" id='telefone' pattern="[0-9]{5}-[0-9]{4}" required>
-            Ramal:<input value="ramal" type="number" class="ramal" id='ramal' name="ramal" pattern="[0-9]{3}" required>
+              required>) Tel: <input type="tel" name="telefone" id='telefone' pattern="[0-9]{5}-[0-9]{4}">
+            Ramal:<input value="ramal" type="number" class="ramal" id='ramal' name="ramal" pattern="[0-9]{3}">
           </p>
         </lable>
         <lable for='email'>
-          <p>E-mail:<input type="email" id="email" name="email" required></p>
+          <p>E-mail:<input type="email" id="email" name="email"></p>
         </lable>
     </div>
     <hr>
@@ -48,7 +48,7 @@
       <lable for="série">
         <p>Série:</p>
         <p>
-          <select name="série" id="série" required>
+          <select name="série" id="série">
             <option value="Pre-escolar">pré-escolar</option>
             <option value="Fundamental">Fundamental</option>
             <option value="Ensino Medio">Ensino Médio</option>
@@ -93,8 +93,8 @@
   </main>
   <hr>
   <footer>
-    <button type="submit" value="enviar">Enviar Formulário</button>
-    <button type="reset" value="limpar ">Limpar Campos</button>
+    <button form="form" type="submit" value="enviar">Enviar Formulário</button>
+    <button form="form" type="reset" value="limpar ">Limpar Campos</button>
   </footer>
 </body>
 
