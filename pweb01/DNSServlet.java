@@ -24,16 +24,21 @@ public class DNSServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.getWriter().println("Você fez um GET");
-    }
-
-    public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
         String domainName = req.getParameter("domainName");
         String ip = req.getParameter("ip");
 
         if (ipMap.containsKey(domainName)) {
-            resp.getWriter().println("IP :" + ipMap.get(domainName));
+            resp.getWriter().println("IP: " + ipMap.get(domainName));
+
+        }
+    }
+
+    public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String domainName = req.getParameter("domainName");
+        String ip = req.getParameter("ip");
+
+        if (ipMap.containsKey(domainName)) {
+            resp.getWriter().println("IP: " + ipMap.get(domainName));
 
         } else if (domainName == null || ip == null) {
             resp.sendError(HttpServletResponse.SC_BAD_REQUEST);
@@ -42,7 +47,6 @@ public class DNSServlet extends HttpServlet {
         } else {
             ipMap.put(domainName, ip);
             resp.getWriter().println("DOMINIO CADASTRADO");
-            // A HTTP status is returned to client
             resp.setStatus(HttpServletResponse.SC_CREATED);
         }
 
