@@ -11,7 +11,7 @@ import jakarta.servlet.http.HttpSession;
 
 @WebServlet(name = "Sessão", value = "/sessao")
 
-public class SectionServlet extends HttpServlet {
+public class SessionServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -37,7 +37,8 @@ public class SectionServlet extends HttpServlet {
 
     @Override
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.getWriter().println("Você fez um DELETE");
+        HttpSession session = req.getSession();
+        session.invalidate();
     }
 
 }
