@@ -153,7 +153,15 @@ public class FormServlet extends HttpServlet {
         /* Mensagem de confirmação do cadastro */
         if (validacao.size() > 0) {
             HttpServletResponse response = (HttpServletResponse) resp;
-            response.sendRedirect("http://localhost:8080/pweb01/invalido");
+
+            StringBuilder resposta = new StringBuilder();
+            resposta.append("<h2>Erros</h2>");
+            for (String validacoes : validacao) {
+                resposta.append("-" + validacoes + " <br/> \\n");                
+            }
+            resp.getWriter().write(resposta.toString());
+            
+            //response.sendRedirect("http://localhost:8080/pweb01/invalido");
         } else {
             HttpServletResponse response = (HttpServletResponse) resp;
             response.sendRedirect("http://localhost:8080/pweb01/sucesso");
